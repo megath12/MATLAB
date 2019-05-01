@@ -33,9 +33,9 @@ for i=1:51;
     if p==1;
         disp('No hay nada')
     else
-        disp('coño esta activado');
+        disp('coÃ±o esta activado');
         pause(.008333);
-        disp('coño')
+        disp('coÃ±o')
     end
 end
 

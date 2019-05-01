@@ -1,0 +1,547 @@
+
+
+                                                  Lunes 08 - Junio- 2015
+
+
+
+
+>> clear all
+>> pm1=[1 -2];
+>> pm2=[1 3];
+>> pp1=conv(pm1,pm2)
+
+pp1 =
+
+     1     1    -6
+
+
+
+
+
+
+
+
+a=[3, 2, -6];
+b=[4, 1];
+c=[5, 3, 2, -1];
+d=conv(a,b)
+e=conv(d,c)
+f=conv(d,c)
+
+
+
+
+
+
+clc
+
+a=[1 0 0 -27];
+b=[1 -3];
+c=deconv(a,b)
+
+
+
+
+
+clc
+
+a=[1 0 0 -27];
+b=[1 -3];
+c=deconv(a,b)
+roots(c)
+
+
+
+
+
+
+
+clc
+a=[1, -3];
+a2=[1, -1];
+a3=[1, 1];
+p1=conv(conv(a,a2),a3)
+r=roots(p1)
+
+
+
+
+
+
+
+
+a4=[5, -1, 3/2, pi, 0];
+roots(a4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clc
+clear
+
+xg=-.7:.001:.1;
+yg=5*xg.^4-xg.^3+1.5*xg.^2+pi*xg;
+plot(xg,yg)
+grid
+
+e=xg*0;
+hold on
+plot(xg, e,'k')
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+                                      Lunes 15-06 Junio- 2015
+
+
+
+
+
+
+
+clc
+clear all
+x=[3,4,5,7,8,10];
+y=[10,50,120,140,150,600];
+plot(x,y,'*b')
+grid
+polyfit(x,y,3)
+
+
+
+
+
+
+
+
+
+
+
+clc
+clear all
+x=[3,4,5,7,8,10];
+y=[10,50,120,140,150,600];
+plot(x,y,'*b')
+hold on
+p3=polyfit(x,y,3)
+xg=3:0.1:10;
+yg=polyval(p3,xg);
+plot(xg,yg,'*g');
+
+grid
+hold off
+plot(x,y,'*y',xg,yg,'m')
+grid
+yr=x*0;
+plot(x,y,'*k',xg,yg,'*m',x,yr,'*r')
+grid
+title('Ajuste de grafica')
+xlabel('x')
+ylabel('y')
+gtext('ajuste de la ecuacion ')
+
+
+
+
+
+
+
+
+
+
+
+clc
+clear all
+x=[3,4,5,7,8,10];
+y=[10,50,120,140,150,600];
+plot(x,y,'*b')
+hold on
+p3=polyfit(x,y,3)
+xg=3:0.1:10;
+yg=polyval(p3,xg);
+plot(xg,yg,'*g');
+
+grid
+hold off
+plot(x,y,'*y',xg,yg,'m')
+grid
+yr=x*0;
+plot(x,y,'*k',xg,yg,'*m',x,yr,'*r')
+grid
+title('Ajuste de la Grafica')
+xlabel('x')
+ylabel('y')
+gtext('Ajuste de la Ecuacion ')
+subplot(2,2,3)
+
+
+
+
+
+
+
+
+
+
+
+
+% Graficas en 4 cuadrantes con 1una ecuacion
+clc
+clear all
+x=[3,4,5,7,8,10];
+y=[10,50,120,140,150,600];
+plot(x,y,'*b')
+hold on
+
+subplot(2,2,1)
+p1=polyfit(x,y,1);
+xg=3:0.1:10;
+yg=polyval(p1,xg);
+plot(xg,yg,'g');
+grid
+
+subplot(2,2,2)
+p2=polyfit(x,y,2);
+xg=3:0.1:10;
+yg=polyval(p2,xg);
+plot(xg,yg,'g');
+grid
+
+subplot(2,2,3)
+p3=polyfit(x,y,3);
+xg=3:0.1:10;
+yg=polyval(p3,xg);
+plot(xg,yg,'g');
+grid
+
+subplot(2,2,4)
+p1=polyfit(x,y,1);
+xg=3:0.1:10;
+yg=polyval(p1,xg);
+plot(xg,yg,'g');
+p2=polyfit(x,y,2);
+xg=3:0.1:10;
+yg=polyval(p2,xg);
+plot(xg,yg,'g');
+grid
+p3=polyfit(x,y,3);
+xg=3:0.1:10;
+yg=polyval(p3,xg);
+plot(xg,yg,'g');
+grid
+
+
+
+
+
+
+
+x=-5:5;
+y=x;
+[X,Y]=meshgrid(x,y);
+z=(sin(x)).^2+(cos(y)).^2;
+plot3(x,y,z)
+Z=(sin(X)).^2+(cos(Y))^2
+plot3(X,Y,Z)
+grid
+
+
+
+
+
+
+
+
+
+
+fi=0:pi/20:6*pi;
+plot3(cos(fi),sin(fi),fi,'r')
+mesh(z)
+x=-5:0.2:5;
+y=x;
+[X,Y]=meshgrid(x,y);
+Z=X.^2+Y.^2;
+mesh(Z)
+% Grafica de malla
+surf(Z)
+%Grafica de superficie
+contour(Z,50)
+%Especie de curvas de linea
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+
+
+                                                       Lunes 22-06 Junio- 2015
+
+
+
+
+
+
+clear all
+clc
+syms x y
+s=x^3-1
+s2=(x-2)^2+(y-4)^2
+s3=x-1
+s4=4*x^3-3*x^2+2*x+1
+s5=x+tan(x^2)
+
+ezplot(s,[-5,5])
+grid
+
+fplot('4*x^3-3*x^2+2*x+1',[-10,10])
+grid
+
+% Si s4 se usa como arreglo 
+sa4=[4 -3 2 1];
+dsa4=polyder(sa4)
+%simbolico
+ds4=diff(s4)
+
+ds5=diff(s5,1)
+pretty(s5)
+
+sds5=diff(s5,2)
+sds5=diff(ds5)
+pretty(sds5)
+tds1=diff(s,3)
+
+%Cuando se tiene 2 variables de deriva parcialmente 
+
+diff(s2)
+diff(s2,y)
+
+% Desarrolar el producto    s2 s2=(x-2)^2+(y-4)^2
+%Una variable
+ds2=collect(s2)
+v=collect(s2,y)
+% Todas la variables
+ds2=expand(s2)
+
+% Desarrollar x^3-1
+factor(s)
+
+% Calcular las raices de 4*x^3-3*x^2+2*x+1
+%como es polinomio se puede usar root
+
+p9=[4 -3 2 1]
+rp9=roots(p9)
+rs9=solve(s4)
+double(rs9)
+vpa(rs9)
+
+% Sustituir x=0 en s
+subs(s,0)
+% Sustituir x=^[1-10] en s
+t=0:10
+subs(s4,t)
+
+j=subs(subs(s2),1)
+
+% Calcular integral
+p=int(s)
+pretty(p)
+
+
+simplify(s2)
+
+simple(s2)
+
+% transforma arreglo a polinomio
+poly2sym(p9)
+
+
+% c1=s1/s3
+
+simplify(s/s3)
+expand(s/s3)
+collect(s/s3)
+factor(s/s3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Hacer la discucion de la grafica de: y=4*x^4-3*x^2+2*x+1
+% Dominio
+% Rango
+% Intersecciones
+% Puntos Criticos
+% Concavidad y crecimiento
+
+y=[4 0 -3 2 1];
+xg=-1.5:0.001:1.5;
+yg=polyval(y,xg);
+plot(xg,yg,'g','Linewidth',2)
+grid
+
+% Encontrar p minimos
+% se deriva e iguala a 0
+dy=polyder(y)
+pc=roots(dy)
+
+%rango=(-0.7378, infinito) 
+
+vpc=[-.8,-.7];
+polyval(dy,vpc)
+
+% Hay un minimo debido a (-,+) en lo evaluado
+
+% segunda derivada
+sdy=polyder(dy)
+polyval(sdy,pc(1))
+%debido a que al evaluar 2da derivada con p.criticos es positivo hay un
+%minimo
+%P. Inflexion
+pin=roots(sdy)
+
+%La funcion es concava hacia arriba (-inf.-.3536)u.(3536,inf)
+%La funcion es concava hacia arriba (-.3536,3536)
+%La f crec (-.7378,inf)
+%la f decrec (-inf,-.7378)
+roots(y)
+
+
+
+
+
+
+
+
+
+
+__________________________________________________________________________________________________________________________________
+
+
+                                                Lunes 29 - Junio 06 - 2015
+
+
+
+
+
+
+
+
+clc
+syms x y
+fo=(x-2)^2+(y-1)^2-25
+fg=expand(f)
+pretty(g)
+% para despejar usar comando solve
+fd=solve(fo,y)
+pretty(fd)
+% Para graficar el semiplano superior
+ezplot(fd(1),[-4,8])
+grid
+% diferencial de la parte positiva 
+fp=diff(fd(1))
+pretty(fp)
+%Integrar (Longitud de curva)
+l=sqrt(1+fp^2);
+k=int(l)
+k2=int(l,-3,7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clc
+syms x y
+disp('funcion')
+y=(x^4/8)+(1/(4*x^2))
+y2=expand(y)
+xg=0:.001:5;
+yg=xg.^4/8+1/4*xg.^2;
+plot(xg,yg,'r')
+grid
+disp('derivadas')
+k=diff(y)
+k2=diff(y2)
+pretty(k)
+pretty(k2)
+disp('integrales')
+i=sqrt(1+(k)^2);
+p=int(i)
+pretty(p)
+res=int(i,1,2)
+pretty(res)
+vpa(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

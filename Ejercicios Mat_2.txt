@@ -1,0 +1,658 @@
+
+
+% programa que calcula el porcentaje de mujeres y hombres de un total
+clc
+disp('Este programa calcula el porcentaje de mujeres y hombres de un total')
+n1=input('Cuantas Mujeres hay ');
+n2=input('Cuantos hombres hay ');
+p1=(n1/(n1+n2))*100;
+p2=(n2/(n1+n2))*100;
+disp('El porcentaje de mujeres es ')
+disp(p1)
+disp('El porcentaje de hombres es ')
+disp(p2)
+
+
+
+
+% indica solucion de una ecuacion cuadratica y caracteristicas
+a=input('Teclea el termino cuadratico ');
+b=input('Teclea el termino lineal ');
+c=input('Teclea el coeficiente ');
+d=b^2-4*a;
+x1=((-b+sqrt(d))/(2*a));
+x2=((-b-sqrt(d))/(2*a));
+if d<0
+    disp('Las raices son complejas')
+else
+    if d>0 
+        disp('Las raices son reales distintas')
+    else 
+        disp('Las raices son reales iguales')
+    end
+end
+disp(x1)
+disp(x2)
+
+
+
+
+% indica coeficientes de ecuacion cuadratica 
+a=input('Teclea el termino cuadratico');
+b=input('Teclea el termino lineal');
+c=input('Teclea el coeficiente');
+d=b^2-4*a;
+x1=(-b+sqrt(d))/(2*a);
+x2=(-b-sqrt(d))/(2*a);
+if d<0
+    disp('Las raices son complejas')
+else
+    disp('Las raices son reales')
+end
+disp(x1)
+disp(x2)
+ 
+
+
+% programa que lee 3 numeros e indica cual es mayor y el menor 
+clc
+a=input('Teclea el termino ');
+b=input('Teclea el termino ');
+c=input('Teclea el termino ');
+if a>b
+    if a>c
+        fprintf('El numero %g es el mayor',a);
+    else
+            fprintf('El numero %g es el mayor',c);
+    end
+else
+    if  b>c
+        fprintf('El numero %g es el mayor',b);
+    else 
+        fprintf('El numero %g es el mayor',c);
+        
+    end
+end
+        
+
+
+
+
+
+
+
+
+% P. de 3 numeros indica en lista descendente del mayor al menor
+clc
+a=input('Teclea el termino ');
+b=input('Teclea el termino ');
+c=input('Teclea el termino ');
+if a>b
+    if a>c
+        if c>b
+            fprintf('De mayor a menor son \n%g \n%g \n%g',b,c,a);
+        else 
+            fprintf('De mayor a menor son \n%g \n%g \n%g',c,b,a);
+        end
+    else
+        fprintf('De mayor a menor son n%g \n%g %g',b,a,c);
+    end
+else
+    if b>c
+           if c>a
+               fprintf('De mayor a menor son /n%g /n%g /%g',a,c,b);
+           else
+               fprintf('De mayor a menor son /n%g /n%g /%g',c,a,b);
+           end
+    else
+        fprintf('De mayor a menor son /n%g /n%g /%g',a,b,c);
+    end
+end
+
+
+
+
+
+
+
+% Porgrama que genera una matriz
+r=input('numero de renglones: ');
+c=input('numero de columnas: ');
+for nr=1:r
+    for nc=1:c
+        fprintf('escribe el elemento %g,%g\n',nr,nc);
+        A(nr,nc)=input('');
+    end
+end
+disp(A)
+
+
+
+
+
+
+
+
+
+% Porgrama que genera una tabla de multiplicar del 1 al 10 de cualquier numero
+clc
+n=input('Escribe el numero de la tabla que quieres ');
+for k=1:10
+    p=n*k;
+    fprintf('%g x %g = %g \n',n, k, p)
+end
+
+
+
+
+
+
+
+
+
+
+% Porgrama que lee 3 calificaciones de n alumnos indica promedio global y cuantos de estos aprobaron 
+clc
+n=input('Numero de alumnos ');
+nap=0;
+sp=0;
+for k=1:n
+    fprintf('Dame la calificacion 1 del alumno %g\n',k);
+    c1=input('');
+    fprintf('Dame la calificacion 2 del alumno %g\n',k);
+    c2=input('');
+    fprintf('Dame la calificacion 3 del alumno %g\n',k);
+    c3=input('');
+    p=(c1+c2+c3)/3;
+    if p>=6;
+        nap=nap+1
+    end
+sp=sp+p
+end
+pg=sp/n
+fprintf('Hay %g aprobados, el promedio global es de %g\n',nap, pg);
+
+
+
+
+
+
+
+
+
+
+%Programa que hace sumatoria k2^2
+clc
+at=0;
+for m=1:7
+    fprintf('Ahorro del dia %g\n',m);
+    ad=input('');
+    at=at+ad;
+end
+fprintf('El ahorro total es %g\n',at);
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+%Programa para adivinar resultado de un dado
+d=ceil(rand*6);
+for k=1:3
+    fprintf('Adivina el resultado del dado, intento %g\n',k);
+    ad=input('');
+    if ad==d
+        fprintf('adivinaste en el intentyo %g, el dado resulto %g\n',k,d);
+        break
+    else
+        fprintf('fallaste, te quedan %g intentos\n', 3-k);
+    end
+end
+
+
+
+
+
+
+
+
+
+
+% Porgarama para validar entero
+clc
+n=input('numero entero');
+r=rem(n,1);
+while r~=0
+    n=input('Te dije que entero babotas');
+    r=rem(n,1);
+end
+fprintf('El numero %g es entero \n',n)
+
+
+
+
+
+
+
+
+
+
+
+
+% Porgarama para validar entero y positivo
+clc
+n=input('numero entero positivo ');
+rem(n,1);
+ne=0;
+while r~=0|n<=0
+    n=input('Numero entero y positivo ');
+    r=rem(n,1);
+    ne=ne+1;
+end
+fprintf('El numero %g es entero con %g equivocaciones',n,ne);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+% Porgarama para validar entero
+clc
+n=input('numero entero positivo ');
+rem(n,1);
+ne=0;
+while ~(r==0&n>0)
+    n=input('Numero entero y positivo ');
+    r=rem(n,1);
+    ne=ne+1;
+end
+fprintf('El numero %g es entero con %g equivocaciones',n,ne);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Porgarama que indica a N alumnos cuantos son aprobados y el promedio general
+clc
+n=input('Cuantos alumnos son ');
+r=rem(n,1);
+while ~(r==0&n>0)
+    n=input('Numero entero y positivo ');
+    r=rem(n,1); 
+end
+cont=0;
+sp=0;
+for k=1:n
+    c1=input('Calificacion 1; ');
+    while ~(c1>=0&c1<=10)
+        c1=input('Calificacion 1; ');
+    end
+    c2=input('Calificacion 2; ');
+    while ~(c2>=0&c2<=10)
+        c2=input('Calificacion 2; ');
+    end
+    c3=input('Calificacion 3; ');
+    while ~(c3>=0&c3<=10)
+        c3=input('Calificacion 3; ');
+    end
+    p=(c1+c2+c3)/3;
+    if p>=6
+        cont=cont+1;
+    end
+    sp=sp+p;
+end
+pg=sp/n;
+ap=cont;
+fprintf('Tus aprobados son %g y el promedio global es %g',ap,pg)
+
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Porgrama que de n numeros que lee, ajusta en vector y acomoda de menor a mayor
+n=input('No de elementos ');
+while n<0~rem(n,1)~=0
+    n=input('Num entero positivo');
+end
+for k=1:n
+    fprintf('ingresa el valor %g\n',k);
+    v(k)=input('');
+end
+for p=1:n-1
+    for h=p+1:n
+        if v(p)>v(h)
+            aux=v(p);
+            v(p)=v(h);
+            v(h)=aux;
+        end 
+    end
+end
+disp('el vector ordenado es')
+disp(v)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Porgrama que indica si un numero es primo o no lo es
+clc
+n=input('Escribe tu numero ');
+while ~(n>0|rem(n,1)~=0);
+    n=input('Escribe tu numero ');
+end
+    for k=2:n-1
+        r=rem(n,k);
+        if r==0
+            disp('No es primo');
+        else
+            disp('es primo');
+        end
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clc
+% Porgrama que indica si un numero es primo o no lo es y te muestra el numero
+n=input('Escribe tu numero ');
+while ~(n>0|rem(n,1)~=0);
+    n=input('Escribe tu numero ');
+end
+cont=0;
+    for k=2:n-1
+        r=rem(n,k);
+        if r==0
+           cont=cont+1;
+        end
+    end
+    if cont==0
+        fprintf('%g es primo',n)
+    else
+        fprintf('%g no es primo',n)
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clc
+% Programa que dado un numero(n) generan numeros primos menores a el
+n=input('Escribe tu numero ');
+while ~(n>0|rem(n,1)~=0);
+    n=input('Escribe tu numero ');
+end
+for np=1:n-1
+cont=0;
+    for k=2:np-1
+        r=rem(np,k);
+        if r==0
+           cont=cont+1;
+        end
+    end
+    if cont==0
+        disp(np)
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Programa que genera una matriz nxm con los elementos que tu quieras
+m=input('Escribe el numero de filas');
+while ~(m>1|rem(m,1)~=0);
+    m=input('Escribe el numero de filas ');
+end
+n=input('Escribe el numero de columnas');
+while ~(n>1|rem(n,1)~=0);
+    n=input('Escribe el numero de columnas');
+end
+for nf=1:m
+    for nc=1:n
+        fprintf('Escribe el elemento %g %g: \n',nc,nf)
+        m(nf,nc)=input('');
+    end
+end
+disp(m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Porgrama que genera una matriz identidad cuadrada
+n=input('Escribe el numero de tu matriz cuadrada');
+while ~(n>1|rem(n,1)~=0);
+    n=input('Escribe el numero de tu matriz cuadrada');
+end
+for f=1:n
+    for c=1:n
+        if f==c
+            m(f,c)=1;
+        else
+            m(f,c)=0;
+        end
+    end
+end
+disp(m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Programa que genera una matriz mxn y que suma los valores de la diagonal(traza)
+m=input('Escribe el numero de filas');
+while ~(m>1&rem(m,1)==0);
+    m=input('Escribe el numero de filas ');
+end
+n=input('Escribe el numero de columnas');
+while ~(n>1&rem(n,1)==0);
+    n=input('Escribe el numero de columnas');
+end
+tr=0;
+for f=1:m
+    for c=1:n
+        fprintf('Escribe el elemento %g %g: \n',c,f)
+        m(f,c)=input('');
+        if f==c
+            tr=tr+m(f,c);
+        end
+    end
+end
+disp(m)
+fprintf('La traza es %g',tr)
+
+
+
+
+
+
+
+
+clear
+clc
+& Programa
+m=input('Escribe el numero de filas');
+while ~(m>1&rem(m,1)==0);
+    m=input('Escribe el numero de filas ');
+end
+n=input('Escribe el numero de columnas');
+while ~(n>1&rem(n,1)==0);
+    n=input('Escribe el numero de columnas');
+end
+tr=0;
+for f=1:m
+    for c=1:n
+        fprintf('Escribe el elemento %g %g: \n',c,f)
+        m(f,c)=input('');
+        if f.00000000c
+            tr=tr+m(f,c);
+        end
+    end
+end
+disp(m)
+fprintf('La traza es %g',tr)
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Programa que genera una matriz nxm y coloca 1 sobre la diagonal y 0 al resto
+m=input('Escribe el numero de filas ');
+while ~(m>1&&rem(m,1)==0);
+    m=input('Escribe el numero de filas ');
+end
+n=input('Escribe el numero de columnas ');
+while ~(n>1&&rem(n,1)==0);
+    n=input('Escribe el numero de columnas ');
+end
+for f=1:m
+    for c=1:n
+        if f<c
+            m(f,c)=1;
+        else
+            m(f,c)=0;
+        end
+    end
+end
+disp(m)
+
+
+
+
+
+
+
+
+
+
+
+clc
+% Validar un numero positivo y entero
+n=input('Escribe un numero positivo ');
+while n<=0||rem(n,1)~=0
+    n=input('Escribiste un numero negativo y/o racional baboso, escribe de nuevo ');
+end
+fprintf('Tu numero %g es positivo y entero chaval, Felicidades',n)
+
+
+
+
+
+
+
+

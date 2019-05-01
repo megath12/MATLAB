@@ -1,0 +1,406 @@
+
+----------------PROGRAMAS SECUENCIALES-----------------------------
+
+
+
+
+% Solucion de ecuacion cuadratica
+clc
+clear all
+disp('Solucion de ecuacion cuadratica')
+
+a=input('Escribe el numero cuadrado x^2 : ');
+b=input('Escribe el numero lineal x : ');
+c=input('Escribe el numero : ');
+n1=(-b+sqrt(b^2-4*a*c))/(2*a);
+n2=(-b-sqrt(b^2-4*a*c))/(2*a);
+fprintf('Primer numero de la solucion es %g\n',n1)
+fprintf('Segundo numero de la solucion es %g\n',n2)
+
+
+
+
+
+
+
+% Area de pentagono
+clc
+clear all
+disp('Area de pentagono')
+
+a=input('Escribe el apotema del pentagono: ');
+b=input('Escribe la base del pentagono: ');
+c=a*b*5;
+fprintf('El area del pentagono es %g\n',c)
+
+
+
+
+
+
+% Ley de cosenos para conocer un lado
+clc
+clear all
+disp('Ley de cosenos para conocer un lado')
+a=input('Escribe el primer lado del triangulo: ');
+b=input('Escribe el seungo lado del triangulo: ');
+c=input('Escribe el angulo de ambos lados: ');
+A=sqrt(a^2+b^2-2*a*b*sin(c));
+fprintf('El tercer lado mide %g\n',A)
+
+
+
+
+
+
+% Calcula perimetro de figura de n lados
+clear all
+clc
+disp('Calcula perimetro de figura de n lados')
+a=input('Numero de lados de la figura: ');
+b=input('Valor de un lado de la figura: ');
+c=a*b;
+fprintf('El perimetro de la figura de %g lados es %g\n',a ,c)
+
+
+
+
+
+
+
+
+% Transformar grados Celsius a Farenheith
+clear all 
+clc
+disp('Transformar grados Celsius a Farenheith')
+a=input('Temperatura en °C: ');
+b=a*1.8+32;
+fprintf('Temperatura en °F: %g\n',b);
+
+
+
+
+
+
+
+
+%  Precio de Producto y descuento
+clc
+clear all
+a=input('Precio del producto ');
+b=input('Poscentaje de descuento ');
+
+e=b/100;
+d=a*e;
+c=a-d;
+
+fprintf('El descuento es de %g\n',d);
+fprintf('El precio del producto con descuento es de %g\n',c);
+
+
+
+
+
+
+
+
+
+% Porcentaje de hombres y mujeres
+clc
+clear all
+a=input('Numero de hombres ');
+b=input('Numero de mujeres ');
+
+g=a+b;
+c=100*(a/g);
+d=100*(b/g);
+
+fprintf('Porcentaje de mujeres %g\n',c);
+fprintf('Porcentaje de hombres %g\n',d);
+
+
+
+
+
+
+
+
+% Velocidad media
+clc
+clear all
+a=input('Escribe la distancia(m) ');
+b=input('Escribe el tiempo(s) ');
+
+v=a/b;
+fprintf('La velocidad promedio es de %g m/s\n',v)
+
+
+
+
+
+
+
+
+% Calcular descuento
+clc 
+clear all
+a=input('Precio del producto sin descuento ');
+b=input('Precio del producto con descuento ');
+c=((a-b)/a)*100;
+
+fprintf('El descuento por este producto es de %g por ciento\n',c);
+
+
+
+
+
+
+
+%  Promedio de 3 calificaciones
+clc 
+clear all
+a=input('Escribe tu primer calificacion ');
+b=input('Escribe tu segunda calificacion ');
+c=input('Escribe tu tercera calificacion ');
+
+d=(a+b+c)/3;
+fprintf('El promedio es de %g \n',d);
+
+
+
+
+
+
+
+
+
+----------------PROGRAMAS SECUENCIALES CON IF SIMPLE ---------------------------
+
+
+
+
+
+% Numero mayor entre 2
+
+clc
+clear all
+a=input('Menciona el primer numero ');
+b=input('Menciona el segundo numero ');
+if a>b
+fprintf('El numero mayor es %g\n',a)
+else
+fprintf('El numero mayor es %g\n',b)    
+end
+
+
+
+
+
+
+
+
+% Promedio de 3 calificaciones 
+
+clc 
+clear all
+a=input('Escribe tu primer calificacion ');
+b=input('Escribe tu segunda calificacion ');
+c=input('Escribe tu tercera calificacion ');
+d=(a+b+c)/3;
+if d>=6
+    fprintf('Tu promedio es %g  Aprobatorio\n',d)
+else 
+    fprintf('Tu promedio es %g   No Es Aprobatorio\n',d)
+end
+
+
+
+
+
+
+
+
+% Calcular entero 
+clc
+clear all
+
+w=input('Escribe el numero ');
+if mod(w,1)==0
+    disp('Es entero');
+else
+    disp('No es entero') 
+end
+
+
+% Calcular entero 
+clc
+clear all
+
+w=input('Escribe el numero ');
+if rem(w,1)==0
+    disp('Es entero');
+else
+    disp('No es entero') 
+end
+
+
+
+
+
+
+
+
+
+
+
+
+% Calcular positivo o negativo
+clc 
+clear all
+a=input('Escribe un numero ');
+if  a>0
+    disp('Tu numero es positivo ')
+else 
+    disp('Tu numero es negativo')
+end
+
+
+
+
+
+
+
+
+
+% Calcular Par o Impar 
+clc 
+clear all
+a=input('Escribe un numero ');
+if  rem(a,2)==0
+    disp('Tu numero es par ')
+else 
+    disp('Tu numero es impar')
+end
+
+
+
+
+
+
+
+% Ec.Cuadrada compleja o real 
+clc
+clear all
+a=input('Escribe el valor cuadratico X^2: ');
+b=input('Escribe el valor lineal X: ');
+c=input('Escribe el valor: ');
+
+t=(b^2-4*a*c);
+if t>0
+    disp('Raices reales');
+else
+    disp('Raices complejas');
+end
+    
+
+
+
+
+
+% pH de sustancia 
+clc 
+clear all
+a=input('Escribe el pH de la sustancia analizada: ');
+if a>7
+    disp('Sustancia acida');
+else
+    disp('Sustancia alcalina');
+end
+
+
+
+
+
+% Asignturas reprobadas
+clc 
+clear all
+q=input('Materias reobadas: ');
+if q>0
+    disp('Eres Irregular');
+else
+    disp('Eres Regular');
+end
+
+
+
+
+
+
+% Marcador de futbol
+clc
+clear all
+d=input('Goles del Local: ');
+f=input('Goles del Visitante: ');
+if d>f
+    disp('El local va ganando')
+else
+    disp('El visitante va ganando')
+end
+
+
+
+
+
+
+
+
+------------------- PROGREMAS SECUENCIALES CON IF ANIDADO EN OTRO IF ------------------------
+
+
+
+
+
+% Numero entero ><=
+clc
+clear all
+c=input('Ingresa un numero: ');
+if c>=0
+    if c==0
+        disp('Numero nulo');
+    else
+        disp('Numero positivo');
+    end
+else
+        disp('Numero negativo');
+end
+
+
+
+
+
+
+
+% numero mayor de 3 nums
+clc 
+clear all
+a=input('Escribe el 1° numero: ');
+b=input('Escribe el 2° numero: ');
+c=input('Escribe el 3° numero: ');
+if a>b
+if a>c
+fprintf('El numero %g es el mayor/n',a);
+else 
+fprintf('El numero %g es el mayor/n',c);
+end
+else 
+if b>c
+fprintf('El numero %g es el mayor/n',b);
+else
+fprintf('El numero %g es el mayor/n',c);
+end 
+end
+
+
+
+
+

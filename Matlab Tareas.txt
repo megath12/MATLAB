@@ -1,0 +1,269 @@
+
+
+
+
+
+clc
+disp('Este programa calcula la sumatoria de 2*k^2/k! cuando k inicia en 1 y termina en 5')
+sumat=0;
+for k=1:5
+ter(k)=(2*k^2)/factorial(k);
+sumat=sumat+ter(k);
+end
+fprintf('Los terminos son:\n')
+disp(ter)
+fprintf('La sumatoria de los terminos es %g\n',sumat)
+
+
+
+
+
+
+
+
+
+clear
+clc
+disp('Este programa te indica cuantos números son positivos, negativos y cuáles son estos números')
+n=input('Cuantos números teclearas ');
+sum=0;
+sumn=0;
+sneut=0;
+f=0;
+for k=1:n
+fprintf('Escribe el %g numero ',k);
+y=input('');
+f=f+1;
+if y>0
+p(sum+1)=y;
+sum=sum+1;
+else
+if y<0;
+n(sumn+1)=y;
+sumn=sumn+1;
+else     
+sneut=sneut+1;
+end
+end
+end
+fprintf('De %g números, %g es/son positivo(s) y %g es/son negativo(s) y %g neutro(s)\n',f,sum,sumn,sneut);
+disp ('Los números positivos son:');
+disp(p);
+disp ('Los números negativos son:');
+disp(n);
+
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+clear
+clc
+% Programa que genera una matriz nxm con los elementos que tu quieras
+m=input('Escribe el numero de filas');
+while ~(m>1|rem(m,1)~=0);
+    m=input('Escribe el numero de filas ');
+end
+n=input('Escribe el numero de columnas');
+while ~(n>1|rem(n,1)~=0);
+    n=input('Escribe el numero de columnas');
+end
+for nf=1:m
+    for nc=1:n
+        fprintf('Escribe el elemento %g %g: \n',nc,nf)
+        m(nf,nc)=input('');
+    end
+end
+disp(m)
+
+
+
+
+
+
+
+
+% Porgrama que indica si un numero es primo o no lo es
+clc
+n=input('Escribe tu numero ');
+while ~(n>0|rem(n,1)~=0);
+    n=input('Escribe tu numero ');
+end
+    for k=2:n-1
+        r=rem(n,k);
+        if r==0
+            disp('No es primo');
+        else
+            disp('es primo');
+        end
+    end
+
+
+
+
+
+
+
+
+clc
+% Porgrama que indica si un numero es primo o no lo es y te muestra el numero
+n=input('Escribe tu numero ');
+while ~(n>0|rem(n,1)~=0);
+    n=input('Escribe tu numero ');
+end
+cont=0;
+    for k=2:n-1
+        r=rem(n,k);
+        if r==0
+           cont=cont+1;
+        end
+    end
+    if cont==0
+        fprintf('%g es primo',n)
+    else
+        fprintf('%g no es primo',n)
+    end
+
+
+
+
+
+
+
+
+clear
+clc
+% Porgrama que de n numeros que lee, ajusta en vector y acomoda de menor a mayor
+n=input('No de elementos ');
+while n<0~rem(n,1)~=0
+    n=input('Num entero positivo');
+end
+for k=1:n
+    fprintf('ingresa el valor %g\n',k);
+    v(k)=input('');
+end
+for p=1:n-1
+    for h=p+1:n
+        if v(p)>v(h)
+            aux=v(p);
+            v(p)=v(h);
+            v(h)=aux;
+        end 
+    end
+end
+disp('el vector ordenado es')
+disp(v)
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+clear
+clc
+% Programa que calcula el promedio de 3 calificaciones de n alumnos, indica promedio global
+n=input('Cuantos alumnos son ');
+while n<=0||rem(n,1)~=0
+    n=input('Cuantos alumnos son ');
+end
+sp=0;
+j=0;
+    for k=1:n
+        fprintf('Teclea la calficacion 1 del alumno %g: ',k);
+        c=input('');
+        while c<0||c>10
+            c=input('teclea de nuevo el numero');
+        end
+        fprintf('Teclea la calficacion 2 del alumno %g: ',k);
+        c2=input('');
+        while c2<0||c2>10
+            c2=input('teclea de nuevo el numero');
+        end
+        fprintf('Teclea la calficacion 3 del alumno %g: ',k);
+        c3=input('');
+        while c3<0||c3>10
+            c3=input('teclea de nuevo el numero');
+        end
+        j=j+1;
+        s=c+c2+c3;
+        p=(s/3);
+        v(j)=p;
+        sp=sp+p;
+    end
+    pg=sp/n;
+    fprintf('Los promedios de %g alumnos son:\n',n)  
+    disp(v);
+    fprintf('El promedio general es de %g\n',pg)
+   
+
+
+
+
+
+
+
+
+
+
+
+clear
+clc
+% Programa que indica el nombre de un angulo mayor a ceroy menor a 180° 
+a=input('Escribe el angulo ');
+while a<=0||a>=180
+    a=input('Escribe el angulo ');
+end
+if a>90
+    fprintf('El angulo %g es Obtuso\n',a)
+else
+    if a<90
+    fprintf('El angulo %g es Agudo\n',a)
+    else 
+        fprintf('El angulo %g es Recto\n',a)
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+clear 
+clc
+% Porgrama que imprime una matriz cuadrada con 1 en la diagonal y en el resto 0
+n=input('Numero de la matriz cuadrada ');
+while n<=0||rem(n,1)~=0
+    n=input('Numero de la matriz cuadrada POSITIVO y ENTERO ');
+end
+for f=1:n
+    for c=1:n
+        if f==c
+            v(f,c)=1;
+        else
+            v(f,c)=0;
+        end
+    end
+end
+fprintf('La matriz identidad %gx%g es:\n',n,n)
+disp(v)
+
+
+
+
+
+
+
+
